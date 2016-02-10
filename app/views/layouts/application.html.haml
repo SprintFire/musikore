@@ -6,5 +6,38 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+    %body
+    %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse.musikore-navbar
+      .container-fluid
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand.musikore-logo{:href => "#"}
+            = image_tag("musikore.svg", height: '32', alt: 'Brand')
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse.musikore-navbar-collection
+          %ul.nav.navbar-nav.musikore-navbar-item
+            %li
+              %a.active{:href => "#"} Home
+          %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
+            /
+              <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            %li
+              %a{:href => "#"} Log in
+        / /.navbar-collapse
+      / /.container-fluid
     = yield
+    %nav.navbar.navbar-default.navbar-fixed-bottom
+      .container
+        %p.navbar-text 2016
+        %a#footerlogo.navbar-brand{:href => "#"}
+          = image_tag("musikore-com.svg", height: '18', alt: 'Brand')

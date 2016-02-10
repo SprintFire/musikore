@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+.navbar-brand
+  //padding: 0.2em 2.0em !important
+
+#footerlogo
+  padding: 0.7em 0.7em !important
+
+.musikore-navbar
+  background: #3B3D4D
+  height: 60px
+
+.musikore-logo
+  //position: absolute
+  top: 16px
+  z-index: 12
+  left: 25px
+  //width: 120px
+  height: 28px
+
+.musikore-navbar-collection
+  height: 60px
+
+.musikore-navbar-item
+  font-family: 'Avenir', 'Avenir Next', sans-serif
+  font-weight: 500
+  //font-size: 15px
+  color: #ffffff
+  opacity: 1
+  //line-height: 17px
+  text-align: center
+  border-top: 20px
+  padding-top: 10px
+  //top: 21px
+
+//.active
+  opacity: 0.09
+  background: #000000
+  width: 90px
+  height: 60px
+  z-index: 11
