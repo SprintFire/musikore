@@ -22,7 +22,7 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.musikore-navbar-collection
           %ul.nav.navbar-nav.musikore-navbar-item
             %li
-              %a.active{:href => "#"} Home
+              %a.active{:href => "/"} Home
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
             /
               <form class="navbar-form navbar-left" role="search">
@@ -32,7 +32,7 @@
               <button type="submit" class="btn btn-default">Submit</button>
               </form>
             %li
-              %a{:href => "#"} Log in
+              %a{:href => "/login"} Log in
         / /.navbar-collapse
       / /.container-fluid
     = yield
