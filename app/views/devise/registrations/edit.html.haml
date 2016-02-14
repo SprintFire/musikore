@@ -10,6 +10,36 @@
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
   .field
+    = f.label :username
+    %br/
+    = f.text_field :username
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  .field
+    = f.label :gender
+    %span.option
+      Male
+      %span
+        = f.radio_button :gender, "M"
+    %span.option
+      Female
+      %span
+      = f.radio_button :gender, "F"
+    %span.option
+      Would not say
+      %span
+      = f.radio_button :gender, "U"
+  .field
+    = f.label :date_of_birth
+    %br/
+    = f.date_select :date_of_birth
+  .field
     = f.label :password
     %i (leave blank if you don't want to change it)
     %br/

@@ -6,6 +6,22 @@
     %br/
     = f.email_field :email, autofocus: true
   .field
+    = f.label :username
+    %br/
+    = f.text_field :username
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  .field
+    = f.label :date_of_birth
+    %br/
+    = f.date_select :date_of_birth
+  .field
     = f.label :password
     - if @minimum_password_length
       %em

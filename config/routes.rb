@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, path: "", path_names: { # was auth
     sign_in: 'login',
     sign_out: 'logout',
-    password: 'secret',
+    password: 'password',
     confirmation: 'verification',
     unlock: 'unblock',
     registration: '', # was register
