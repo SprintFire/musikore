@@ -5,14 +5,14 @@
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, readonly: true#, autofocus: true
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
   .field
     = f.label :username
     %br/
-    = f.text_field :username
+    = f.text_field :username, readonly:true
   .field
     = f.label :first_name
     %br/
@@ -38,7 +38,7 @@
   .field
     = f.label :date_of_birth
     %br/
-    = f.date_select :date_of_birth
+    = f.date_select :date_of_birth, :start_year=>1950, :end_year=>2016
   .field
     = f.label :password
     %i (leave blank if you don't want to change it)
