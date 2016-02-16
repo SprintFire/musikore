@@ -2,6 +2,16 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
 
+  devise_for :users, path: "", path_names: { # was auth
+    sign_in: 'login',
+    sign_out: 'logout',
+    password: 'password',
+    confirmation: 'verification',
+    unlock: 'unblock',
+    registration: '', # was register
+    sign_up: 'signup'
+  }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
