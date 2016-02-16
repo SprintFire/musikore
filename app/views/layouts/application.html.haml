@@ -1,12 +1,24 @@
-!!!
-%html
+!!! 5
+%html(lang="en")
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Musikore
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "Musikore"
     = csrf_meta_tags
-    %body
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+
+
+  %body
     %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse.musikore-navbar
       .container-fluid
         / Brand and toggle get grouped for better mobile display
@@ -24,18 +36,13 @@
             %li
               %a.active{:href => "/"} Home
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
-            /
-              <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-              </form>
             %li
               %a{:href => "/login"} Log in
-        / /.navbar-collapse
-      / /.container-fluid
-    = yield
+
+    .container-fluid
+      //= bootstrap_flash
+      = yield
+
     %nav.navbar.navbar-default.navbar-fixed-bottom
       .container
         .center

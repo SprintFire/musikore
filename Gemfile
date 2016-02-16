@@ -16,9 +16,13 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 # Devise
 gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 
 # Letter Opener
 gem "letter_opener", :group => :development
+
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
