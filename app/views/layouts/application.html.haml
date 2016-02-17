@@ -36,8 +36,16 @@
             %li
               %a.active{:href => "/"} Home
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
-            %li
-              %a{:href => "/login"} Log in
+            - if user_signed_in?
+              %li
+                = current_user.username
+              %li
+                = link_to "Edit Profile", "/edit"
+              %li
+                = link_to "Log out", destroy_user_session_path, method: :delete
+            - else
+              %li
+                %a{:href => "/login"} Log in
 
     .container-fluid
       //= bootstrap_flash
