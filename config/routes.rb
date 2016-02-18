@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'user/index'
+  get 'user/:id' => 'user#index'
+
   get 'home/index'
   root 'home#index'
 
