@@ -28,16 +28,24 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand.musikore-logo{:href => "/"}
+          %a.navbar-brand.musikore-logo{:href => root_path}
             = image_tag("musikore.svg", height: '32', alt: 'Brand')
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.musikore-navbar-collection
           %ul.nav.navbar-nav.musikore-navbar-item
             %li
-              %a.active{:href => "/"} Home
+              %a.active{:href => root_path} Home
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
-            %li
-              %a{:href => "/login"} Log in
+            - if user_signed_in?
+              %li
+                = current_user.username
+              %li
+                = link_to "Edit Profile", edit_user_registration_path
+              %li
+                = link_to "Log out", destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to "Log in", new_user_session_path
 
     .container-fluid
       //= bootstrap_flash
@@ -46,5 +54,5 @@
     %nav.navbar.navbar-default.navbar-fixed-bottom
       .container
         .center
-          %a#footerlogo.navbar-brand.musikore-footer-logo{:href => "/"}
+          %a#footerlogo.navbar-brand.musikore-footer-logo{:href => root_path}
             = image_tag("musikore-com.svg", height: '18', alt: 'Brand')

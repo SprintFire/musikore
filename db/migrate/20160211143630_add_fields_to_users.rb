@@ -5,5 +5,6 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :username, :string, unique: true
     add_column :users, :date_of_birth, :date
     add_column :users, :gender, "char(1)"
+    add_column :users, :title, :string
   end
 end
