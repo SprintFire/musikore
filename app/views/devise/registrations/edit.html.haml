@@ -32,7 +32,7 @@
         .form-group
           = f.label :date_of_birth
           %br/
-          = f.date_select :date_of_birth, class: "form-control"
+          = f.date_select :date_of_birth, :start_year=>Time.now.year, :end_year=>Time.now.year-100, :include_blank => true, :default => nil, class: "form-control"
 
         .form-group
           = f.label :gender
