@@ -38,7 +38,7 @@
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
             - if user_signed_in?
               %li
-                = current_user.username
+                = link_to current_user.username, user_path(current_user.username)
               %li
                 = link_to "Edit Profile", edit_user_registration_path
               %li
@@ -46,7 +46,8 @@
             - else
               %li
                 = link_to "Log in", new_user_session_path
-
+              %li
+                = link_to "Sign up", new_user_registration_path
     .container-fluid
       //= bootstrap_flash
       = yield

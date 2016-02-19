@@ -1,0 +1,9 @@
+%h1 User#index
+%p Find me in app/views/user/index.html.haml
+%h2
+  = @user.username
+%h3
+  = @user.first_name + " " + @user.last_name
+- if @user.title != ""
+  %h3
+    = @user.title
