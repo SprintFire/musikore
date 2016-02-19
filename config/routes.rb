@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'user/index'
-  get 'user/:username' => 'user#index'
+  #get 'user/index'
+  get 'user/:username' => 'user#index', as: 'user'
 
-  get 'home/index'
+  #get 'home/index'
   root 'home#index'
 
   devise_for :users, path: "", path_names: { # was auth
