@@ -11,7 +11,7 @@ Rails.application.configure do
 
   # Activate Mail Opener
   config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'localhost' }
+  config.action_mailer.default_url_options = { :host => 'musikore.dev' }  # Use Anvil
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
