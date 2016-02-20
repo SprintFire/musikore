@@ -38,6 +38,8 @@
           %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
             - if user_signed_in?
               %li
+                = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path
+              %li
                 = link_to current_user.username, user_path(current_user.username)
               %li
                 = link_to "Edit Profile", edit_user_registration_path

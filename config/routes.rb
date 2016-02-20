@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'upload' => 'track#new', as: 'upload'
+
   #get 'user/index'
   get 'user/:username' => 'user#index', as: 'user'
 
