@@ -1,8 +1,9 @@
 %footer#footer
-  .container
-    .row
-      .col-md-4
-        &copy; #{Time.now.year} MarketPlace.
+  %nav.navbar.navbar-default.navbar-fixed-bottom
+    .container
+      .center
+        %a#footerlogo.navbar-brand.musikore-footer-logo{:href => root_path}
+          = image_tag("musikore-com.svg", height: '18', alt: 'Brand')
       .col-md-8.text-xs-right
         %nav.nav.nav-inline
           %a{href: "#"} About
