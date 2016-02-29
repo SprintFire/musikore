@@ -1,0 +1,19 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.home.index, body#devise
+  @include background-cover('home.jpg')
+
+  #main
+    @include background-opacity($black, 0.5)
+    color: white
+    padding: 200px 0
+    margin-top: 0px
+    margin-bottom: -50px
+
+    h1
+      margin-bottom: 30px
+
+    & > .btn
+      margin: 30px 10px
