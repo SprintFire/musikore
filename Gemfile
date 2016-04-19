@@ -19,6 +19,9 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
+# Font Awesome
+gem 'font-awesome-rails
+
 # Social Media omniauthable
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
