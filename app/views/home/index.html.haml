@@ -1,1 +1,5 @@
-= image_tag("home.jpg", alt: 'Responsive image', class: 'img-responsive musikore-background')
+.container
+  .col-md-8.col-md-offset-2.text-xs-center
+    %h1 Home to the music community
+    %h3 Broad your masterpiece, share and comment.
+    = link_to 'Get Started!', new_user_registration_path, class: 'btn btn-primary btn-lg home-button'
