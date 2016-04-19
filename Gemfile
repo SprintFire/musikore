@@ -12,7 +12,7 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Devise
 gem 'devise'
