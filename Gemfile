@@ -19,6 +19,10 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
+# Social Media omniauthable
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Letter Opener
 gem "letter_opener", :group => :development
 
