@@ -12,7 +12,7 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Devise
 gem 'devise'
@@ -20,16 +20,14 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
 # Font Awesome
-gem 'font-awesome-rails
+gem 'font-awesome-rails'
 
-# Social Media omniauthable
+# OmniAuth
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 # Letter Opener
 gem "letter_opener", :group => :development
-
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

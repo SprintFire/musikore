@@ -1,0 +1,36 @@
+#main
+  // margin-top: 50px
+
+#flash_banner
+  margin-bottom: 0px
+  background: #FFAB00
+  color: white
+  border-radius: 0px
+
+body.pages.home, body#devise
+  @include background-cover('dublin.jpg')
+
+  #main
+    @include background-opacity($gray)
+    color: white
+    padding: 200px 0
+    margin-top: 0px
+    margin-bottom: -50px
+
+    h1
+      margin-bottom: 30px
+
+    & > .btn
+      margin: 30px 10px
+
+body.pages.dashboard, body.shops.show
+  .list-group
+    margin-bottom: 5em
+
+.home-button
+  margin-right: 1em
+
+
+.field_with_errors
+  display: initial
+  color: $brand-danger
