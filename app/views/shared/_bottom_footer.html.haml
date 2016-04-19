@@ -1,0 +1,10 @@
+%footer#bottom-footer
+  .container
+    .row
+      .col-md-2
+        = image_tag("musikore-com.svg", height: '18', alt: 'Brand')
+      .col-md-10.text-xs-right
+        %nav.nav.nav-inline
+          = link_to "About us", root_path, class: "footer-links"
+          = link_to "Terms & Conditions", root_path, class: "footer-links"
+          = link_to "Privacy Policy", root_path, class: "footer-links"

@@ -1,0 +1,26 @@
+#top
+  .container
+    %nav.navbar.navbar-static-top.musikore-navbar
+      %button.navbar-toggler.hidden-sm-up{"aria-controls" => "navbar-header", "data-target" => "#navbar-header", "data-toggle" => "collapse", :type => "button"}
+        ☰
+      #navbar-header.collapse.navbar-toggleable-xs.musikore-navbar-collection
+        %a.navbar-brand.musikore-logo{:href => root_path}
+          = image_tag("musikore.svg", height: '32', alt: 'Brand')
+        %ul.nav.navbar-nav.musikore-navbar-item
+          %li.nav-item.active.pull-xs-left
+            =link_to 'Home', root_path, class: 'nav-link'
+          - if user_signed_in?
+            %li.nav-item.pull-xs-right
+              = link_to "Log out", destroy_user_session_path, method: :delete
+            %li.nav-item.pull-xs-right
+              = link_to "Edit Profile", edit_user_registration_path
+            %li.nav-item.pull-xs-right
+              = link_to current_user.username, user_path(current_user.username)
+            %li.nav-item.pull-xs-right
+              = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path
+
+          - else
+            %li.nav-item.pull-xs-right
+              = link_to "Sign up", new_user_registration_path
+            %li.nav-item.pull-xs-right
+              = link_to "Log in", new_user_session_path
