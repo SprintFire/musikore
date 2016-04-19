@@ -1,61 +1,21 @@
 !!! 5
 %html(lang="en")
   %head
-    %meta(charset="utf-8")
-    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "Musikore"
-    = csrf_meta_tags
-    = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
-    = javascript_include_tag "application"
-    / Le HTML5 shim, for IE6-8 support of HTML elements
-    /[if lt IE 9]
-      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+    = render 'shared/head'
 
+  %body{class: "#{params[:controller]} #{params[:action]}"}
+    = render 'shared/header'
 
-  %body
-    %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse.musikore-navbar
-      .container-fluid
-        / Brand and toggle get grouped for better mobile display
-        .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand.musikore-logo{:href => root_path}
-            = image_tag("musikore.svg", height: '32', alt: 'Brand')
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse.musikore-navbar-collection
-          %ul.nav.navbar-nav.musikore-navbar-item
-            %li
-              %a.active{:href => root_path} Home
-          %ul.nav.navbar-nav.navbar-right.musikore-navbar-item
-            - if user_signed_in?
-              %li
-                = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path
-              %li
-                = link_to current_user.username, user_path(current_user.username)
-              %li
-                = link_to "Edit Profile", edit_user_registration_path
-              %li
-                = link_to "Log out", destroy_user_session_path, method: :delete
-            - else
-              %li
-                = link_to "Log in", new_user_session_path
-              %li
-                = link_to "Sign up", new_user_registration_path
-    .container-fluid
-      //= bootstrap_flash
-      = yield
+    = yield :header_fluid
 
-    %nav.navbar.navbar-default.navbar-fixed-bottom
+    #main
       .container
-        .center
-          %a#footerlogo.navbar-brand.musikore-footer-logo{:href => root_path}
-            = image_tag("musikore-com.svg", height: '18', alt: 'Brand')
+        = yield
+
+    = render 'shared/footer'
+
+    -# %nav.navbar.navbar-default.navbar-fixed-bottom
+    -#   .container
+    -#     .center
+    -#       %a#footerlogo.navbar-brand.musikore-footer-logo{:href => root_path}
+    -#         = image_tag("musikore-com.svg", height: '18', alt: 'Brand')
