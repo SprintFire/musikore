@@ -1,0 +1,33 @@
+.card
+  @extend .box-shadow
+
+  .card-header
+    @extend .brand-gradient
+    border-bottom: 3px solid $brand-primary
+    text-transform: uppercase
+    font-weight: bold
+
+  .card-block
+    color: $black
+
+  .card-footer
+    background: $lightGrey
+
+  .card-header, .card-footer, .card-block
+    padding: 20px
+
+  &.tabs
+    .tab-head
+      padding-top: 10px
+
+    .nav-tabs
+      border-bottom: 2px solid $greyBorder
+      padding-left: 20px
+
+      .nav-link
+        border-color: transparent
+        margin-bottom: -1px
+        &.active
+          color: $brand-primary
+          background: transparent
+          border-bottom: 2px solid $brand-primary

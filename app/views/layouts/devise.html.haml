@@ -1,0 +1,23 @@
+!!!
+%html.no-js{ lang: 'eng' }
+  %head
+    = render 'shared/head'
+  %body#devise{class: "#{params[:controller]} #{params[:action]}"}
+
+    = render 'shared/flash_banner'
+    = render 'shared/header'
+
+    #main
+      .container
+        .row
+          .col-md-7#info
+
+            .row
+              .col-md-10
+                %h1 Musikore starts from here.
+                %h5 music commuity • marketplace • portfolio
+          .col-md-5
+            = yield
+
+
+    = render 'shared/footer'

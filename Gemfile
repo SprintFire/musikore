@@ -19,10 +19,15 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
+# Font Awesome
+gem 'font-awesome-rails'
+
+# OmniAuth
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Letter Opener
 gem "letter_opener", :group => :development
-
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
