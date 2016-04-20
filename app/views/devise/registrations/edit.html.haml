@@ -38,15 +38,19 @@
           .form-group
             %p
               = f.label :gender
-            %p.option
-              = f.radio_button :gender, "M"
-              Male
-            %p.option
-              = f.radio_button :gender, "F"
-              Female
-            %span.option
-              = f.radio_button :gender, "U"
-              Would not say
+            .row
+              .col-md-3
+                .option
+                  = f.radio_button :gender, "M"
+                  Male
+              .col-md-3
+                .option
+                  = f.radio_button :gender, "F"
+                  Female
+              .col-md-6
+                .option
+                  = f.radio_button :gender, "U"
+                  Would not say
 
           .form-group
             = f.label :password
