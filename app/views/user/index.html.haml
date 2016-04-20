@@ -1,11 +1,12 @@
 .container
-  .musikore-content
-    %h2
-      = @user.first_name + " " + @user.last_name
-    - if @user.title != ""
-      %h4
-        = @user.title
-
+  .musikore-content#cover-photo
+    .row
+      %img.img-thumbnail.image_center#profile-photo{:alt => "Profile picture",  src: "http://placehold.it/130x130"}
+      %h2
+        = @user.first_name + " " + @user.last_name
+      - if @user.title != ""
+        %h4
+          = @user.title
 .container
   .card
     %h3.card-header
