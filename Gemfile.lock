@@ -68,6 +68,8 @@ GEM
     devise-bootstrap-views (0.0.7)
     erubis (2.7.0)
     execjs (2.6.0)
+    font-awesome-rails (4.5.0.1)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -200,6 +202,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-bootstrap-views
+  font-awesome-rails
   haml
   haml-rails
   jbuilder (~> 2.0)
