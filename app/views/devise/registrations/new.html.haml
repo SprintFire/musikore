@@ -25,17 +25,6 @@
       .row
         .col-sm-6
           .form-group.form-group-default
-            = f.label :first_name
-            = f.text_field :first_name, autofocus: true, required: true, class: "form-control", placeholder: "First name"
-
-        .col-sm-6
-          .form-group.form-group-default
-            = f.label :last_name
-            = f.text_field :last_name, required: true, class: "form-control", placeholder: "Last name"
-
-      .row
-        .col-sm-6
-          .form-group.form-group-default
             = f.label :email
             = f.email_field :email, required: true, class: "form-control", placeholder: "e.g. me@example.com"
 
@@ -43,6 +32,17 @@
           .form-group.form-group-default
             = f.label :username
             = f.text_field :username, required: true, class: "form-control", placeholder: "Username"
+
+      .row
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :first_name
+            = f.text_field :first_name, autofocus: true, required: true, class: "form-control", placeholder: "First name"
+
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :last_name
+            = f.text_field :last_name, required: true, class: "form-control", placeholder: "Last name"
 
       .row
         .col-sm-6
