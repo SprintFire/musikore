@@ -34,10 +34,15 @@
             = f.text_field :last_name, required: true, class: "form-control", placeholder: "Last name"
 
       .row
-        .col-sm-12
+        .col-sm-6
           .form-group.form-group-default
             = f.label :email
             = f.email_field :email, required: true, class: "form-control", placeholder: "e.g. me@example.com"
+
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :username
+            = f.text_field :username, required: true, class: "form-control", placeholder: "Username"
 
       .row
         .col-sm-6
