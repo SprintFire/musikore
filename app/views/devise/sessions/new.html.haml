@@ -1,19 +1,46 @@
-.musikore-content
-  .panel.panel-default
-    .panel-heading
-      %h4= t('.sign_in', :default => "Sign in")
-    .panel-body
-      = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f|
-        .form-group
-          = f.label :email
-          = f.email_field :email, autofocus: true, class: "form-control"
-        .form-group
-          = f.label :password
-          = f.password_field :password, autocomplete: "off", class: "form-control"
-        - if devise_mapping.rememberable?
-          .checkbox
-            %label
-              = f.check_box :remember_me
-              = f.label :remember_me
-        = f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary"
-  = render "devise/shared/links"
+.card
+  .card-header Log in
+
+  .card-block
+    %br
+    .row
+      .col-md-10.col-md-offset-1
+
+        .social-connect-buttons
+          %a.btn.btn-social.btn-facebook{href: user_omniauth_authorize_path(:facebook)}
+            = fa_icon "facebook"
+            Connect with Facebook
+          %a.btn.btn-social.btn-google{href: user_omniauth_authorize_path(:google_oauth2)}
+            = fa_icon "google"
+            Connect with Google
+
+        %hr
+        %span.or
+          %span or
+
+        = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "form-login"}) do |f|
+
+          = render partial: "shared/flash_alert"
+
+          .form-group.form-group-default
+            = f.label :email
+            .controls
+              = f.email_field :email, autofocus: true, class: "form-control", required: true, placeholder: "Your Email", tabindex: "1"
+
+          .form-group.form-group-default
+            = f.label :password
+            .pull-xs-right
+              %small= link_to "Forgot password?", new_password_path(resource_name)
+            .controls
+              = f.password_field :password, autocomplete: "off", class: "form-control", required: true, placeholder: "Your Password", tabindex: "2"
+
+          .form-group
+            .row
+              .col-md-8
+                %span
+                  Register with email?
+                  %br
+                  = link_to "Register for free", new_registration_path(resource_name)
+
+              .col-md-4.text-xs-right
+                = f.submit "Log in", class: "btn btn-primary"
