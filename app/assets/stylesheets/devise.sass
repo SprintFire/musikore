@@ -1,18 +1,7 @@
 body#devise
   @include background-cover('sessions.jpg')
-  &:before
-    content: ' '
-    position: fixed
-    min-width: 100%
-    min-height: 100%
-    width: auto
-    height: 100%
-    z-index: -1
-    top: 0
-    left: 0
-    background-image: linear-gradient(-135deg, #48ff16 0%, #ff0158 100%)
-    opacity: 0.55
-    background-repeat: repeat
+  @include background-gradient-mask
+
 
   #main
     @include background-opacity($gray)
