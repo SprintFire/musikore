@@ -7,6 +7,7 @@ class TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
+    @track.user = current_user
 
     if @track.save
       redirect_to root_path
