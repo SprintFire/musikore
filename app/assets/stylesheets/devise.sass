@@ -1,0 +1,54 @@
+body#devise
+  @include background-cover('sessions.jpg')
+  @include background-gradient-mask
+
+  #main
+    @include background-opacity($gray)
+    color: white
+    padding: 150px 0
+    margin-top: 0px
+    margin-bottom: -50px
+
+    & > .btn
+      margin: 30px 10px
+
+
+  #info
+    margin-top: 70px
+
+  .card
+    span.or
+      color: gray
+      text-align: center
+      display: block
+      margin: 0 auto
+      margin-top: -25px
+      margin-bottom: 20px
+      span
+        background: white
+        padding: 0 20px
+
+    a.btn.btn-social
+      width: 100%
+      text-align: center
+      margin-bottom: 20px
+      color: white
+      i
+        margin-right: 10px
+      &.btn-facebook
+        background: darken(#5074C3, 10%)
+        border-bottom: 3px solid darken(#5074C3, 20%)
+        &:hover
+          background: #5074C3
+      &.btn-google
+        background: darken(#E26C5A, 10%)
+        border-bottom: 3px solid darken(#E26C5A, 20%)
+        &:hover
+          background: #E26C5A
+
+#devise-title
+  font-weight: 600
+  margin-bottom: 0 !important
+
+#devise-subtitle
+  font-weight: 300

@@ -1,39 +1,68 @@
-.musikore-content
-  = bootstrap_devise_error_messages!
-  .panel.panel-default
-    .panel-heading
-      %h4= t('.sign_up', :default => "Sign up")
-    .panel-body
-      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f|
-        .form-group
-          = f.label :email
-          = f.email_field :email, autofocus: true, class: "form-control"
+.card
+  .card-header Sign up
 
-        .form-group
-          = f.label :username
-          %br/
-          = f.text_field :username, class: "form-control"
+  .card-block
+    = render partial: "shared/flash_alert"
 
-        .form-group
-          = f.label :first_name
-          %br/
-          = f.text_field :first_name, class: "form-control"
+    .row
+      .col-md-6
+        %a.btn.btn-social.btn-facebook{href: user_omniauth_authorize_path(:facebook)}
+          = fa_icon "facebook"
+          Connect with Facebook
+      .col-md-6
+        %a.btn.btn-social.btn-google{href: user_omniauth_authorize_path(:google_oauth2)}
+          = fa_icon "google"
+          Connect with Google
 
-        .form-group
-          = f.label :last_name
-          %br/
-          = f.text_field :last_name, class: "form-control"
+    %hr
+    %span.or
+      %span or
 
-        .form-group
-          = f.label :password
-          - if @minimum_password_length
-            %em
-            (#{@minimum_password_length} characters minimum)
-            %br/
-          = f.password_field :password, class: "form-control", autocomplete: "off"
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 
-        .form-group
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, class: "form-control", autocomplete: "off"
-        = f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary"
-  = render "devise/shared/links"
+      = render 'shared/form_errors', f: resource
+
+      .row
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :email
+            = f.email_field :email, required: true, class: "form-control", placeholder: "e.g. me@example.com"
+
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :username
+            = f.text_field :username, required: true, class: "form-control", placeholder: "Username"
+
+      .row
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :first_name
+            = f.text_field :first_name, autofocus: true, required: true, class: "form-control", placeholder: "First name"
+
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :last_name
+            = f.text_field :last_name, required: true, class: "form-control", placeholder: "Last name"
+
+      .row
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :password
+            - if @minimum_password_length
+              %small (#{@minimum_password_length} characters minimum)
+            = f.password_field :password, required: true, autocomplete: "off", class: "form-control", placeholder: "Password"
+        .col-sm-6
+          .form-group.form-group-default
+            = f.label :password_confirmation
+            = f.password_field :password_confirmation, required: true, autocomplete: "off", class: "form-control", placeholder: "Password confirmation"
+
+      .row.submit
+        .col-md-6
+          %p.small
+            By signing up you agree to our
+            %a.text-info{:href => "#"} Terms of Service
+            and
+            = succeed "." do
+              %a.text-info{:href => "#"} Privacy Policy
+        .col-md-6.text-xs-right
+          = f.submit "Sign up", class: "btn btn-primary btn-cons m-t-10"

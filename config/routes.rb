@@ -15,7 +15,10 @@ Rails.application.routes.draw do
     unlock: 'unblock',
     registration: '', # was register
     sign_up: 'signup'
-  }
+  },
+  :controllers => {
+  :omniauth_callbacks => "users/omniauth_callbacks"
+}
 
   resources :tracks
 

@@ -1,23 +1,15 @@
-// .musikore-background
-//   width: 100%
-//   position: fixed
-//   z-index: -10
-//
-// .container-fluid
-//   padding-left: 0
-//   padding-right: 0
-//
-// .musikore-content
-//   padding-top: 4em
-//   padding-bottom: 4em
+.musikore-content
+  padding-top: 4em
+  padding-bottom: 4em
 
-body.home.index, body#devise
+body.home.index
   @include background-cover('home.jpg')
+  @include background-gradient-mask
 
   #main
     @include background-opacity($gray)
     color: white
-    padding: 200px 0
+    padding: 150px 0
     margin-top: 0px
     margin-bottom: -50px
 

@@ -19,12 +19,20 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
-# Letter Opener
-gem "letter_opener", :group => :development
+# Font Awesome
+gem 'font-awesome-rails'
+
 
 # paperclip for file uploads
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
+# OmniAuth
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+
+# Letter Opener
+gem "letter_opener", :group => :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -53,4 +61,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem "better_errors"
 end
