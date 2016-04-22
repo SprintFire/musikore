@@ -1,3 +1,5 @@
+= render 'shared/flash_banner'
+
 #top
   .container
     %nav.navbar.navbar-static-top.musikore-navbar
@@ -11,16 +13,16 @@
             =link_to 'Home', root_path, class: 'nav-link'
           - if user_signed_in?
             %li.nav-item.pull-xs-right
-              = link_to "Log out", destroy_user_session_path, method: :delete
+              = link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link'
             %li.nav-item.pull-xs-right
-              = link_to "Edit Profile", edit_user_registration_path
+              = link_to "Edit Profile", edit_user_registration_path, class: 'nav-link'
             %li.nav-item.pull-xs-right
-              = link_to current_user.username, user_path(current_user.username)
+              = link_to current_user.username, user_path(current_user.username), class: 'nav-link'
             %li.nav-item.pull-xs-right
-              = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path
+              = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path, class: 'nav-link'
 
           - else
             %li.nav-item.pull-xs-right
-              = link_to "Sign up", new_user_registration_path
+              = link_to "Sign up", new_user_registration_path, class: 'nav-link'
             %li.nav-item.pull-xs-right
-              = link_to "Log in", new_user_session_path
+              = link_to "Log in", new_user_session_path, class: 'nav-link'

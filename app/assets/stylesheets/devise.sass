@@ -1,6 +1,17 @@
 body#devise
+  @include background-cover('sessions.jpg')
+  @include background-gradient-mask
+
   #main
-    padding: 100px 0
+    @include background-opacity($gray)
+    color: white
+    padding: 150px 0
+    margin-top: 0px
+    margin-bottom: -50px
+
+    & > .btn
+      margin: 30px 10px
+
 
   #info
     margin-top: 70px
