@@ -19,11 +19,15 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
+# Font Awesome
+gem 'font-awesome-rails'
+
+# OmniAuth
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Letter Opener
 gem "letter_opener", :group => :development
-
-# Font Awesome
-gem "font-awesome-rails"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -63,4 +67,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem "better_errors"
 end
