@@ -1,0 +1,16 @@
+.musikore-content
+  = form_for @track do |f|
+    .card
+      .card-header
+        %h2 Upload a song
+      .card-block
+        .form-group
+          = f.label :title
+          = f.text_field :title, placeholder: "Track title", class: "form-control"
+        .form-group
+          = f.label :track
+          = f.file_field :track, placeholder: "Track title", class: "form-control"
+        .form-group
+          = f.label :description
+          = f.text_area :description, placeholder: "Track title", class: "form-control"
+        = f.submit "Upload track", class: "btn btn-success"

@@ -18,3 +18,5 @@
 
 # Ignore IntelliJ folder
 /.idea/*
+
+public/system/*

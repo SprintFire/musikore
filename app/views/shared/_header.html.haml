@@ -17,7 +17,7 @@
             %li.nav-item.pull-xs-right
               = link_to current_user.username, user_path(current_user.username)
             %li.nav-item.pull-xs-right
-              = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), upload_path
+              = link_to image_tag("upload.svg", height: '20', alt: 'Upload_icon'), new_track_path
 
           - else
             %li.nav-item.pull-xs-right
