@@ -1,39 +1,40 @@
-.container
-  .musikore-content#cover-photo
-    .row
-      %img.img-thumbnail.image_center#profile-photo.col-sm-2{:alt => "Profile picture",  src: "http://placehold.it/130x130"}
-      %h2.col-sm-6
-        = @user.first_name + " " + @user.last_name
-      - if @user.title != ""
-        %h4
-          = @user.title
-.container
-  .card
-    %h3.card-header
-      Song list
-    .card-block
-      %ul.list-group.list-group-flush
-        %li.list-group-item
-          .row
-            .col-md-1
-              %strong No.
-            .col-md-4
-              %strong Title
-            .col-md-5
-              %strong Description
-            .col-md-1
-              %strong Duration
-            .col-md-1
-              %strong Download
-        %li.list-group-item
-          .row
-            .col-md-1
-              1
-            .col-md-4
-              Soviet March
-            .col-md-5
-              The piano cover of famous game theme Soviet March.
-            .col-md-1
-              2:43
-            .col-md-1
-              = fa_icon "download lg"
+- content_for :header_fluid do
+  .container-fluid
+    .musikore-content#cover-photo
+      .row
+        %img.img-thumbnail.image_center#profile-photo.col-sm-2{:alt => "Profile picture",  src: "http://placehold.it/130x130"}
+        %h2.col-sm-6
+          = @user.first_name + " " + @user.last_name
+        - if @user.title != ""
+          %h4
+            = @user.title
+  .container
+    .card
+      %h3.card-header
+        Song list
+      .card-block
+        %ul.list-group.list-group-flush
+          %li.list-group-item
+            .row
+              .col-md-1
+                %strong No.
+              .col-md-4
+                %strong Title
+              .col-md-5
+                %strong Description
+              .col-md-1
+                %strong Duration
+              .col-md-1
+                %strong Download
+          %li.list-group-item
+            .row
+              .col-md-1
+                1
+              .col-md-4
+                Soviet March
+              .col-md-5
+                The piano cover of famous game theme Soviet March.
+              .col-md-1
+                2:43
+              .col-md-1
+                = fa_icon "download lg"
