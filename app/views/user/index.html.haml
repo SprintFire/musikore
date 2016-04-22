@@ -1,8 +1,8 @@
 .container
   .musikore-content#cover-photo
     .row
-      %img.img-thumbnail.image_center#profile-photo{:alt => "Profile picture",  src: "http://placehold.it/130x130"}
-      %h2
+      %img.img-thumbnail.image_center#profile-photo.col-sm-2{:alt => "Profile picture",  src: "http://placehold.it/130x130"}
+      %h2.col-sm-6
         = @user.first_name + " " + @user.last_name
       - if @user.title != ""
         %h4
