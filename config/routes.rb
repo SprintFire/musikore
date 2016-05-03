@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   :omniauth_callbacks => "users/omniauth_callbacks"
 }
 
+  get "account", to: 'users#edit', as: :account
+  patch "account", to: 'users#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
