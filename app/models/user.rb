@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates_inclusion_of :gender, :in => %w(M F U), allow_nil: true, allow_blank: false
   validates :username, presence: true, uniqueness: true, allow_nil: false
 
+  has_many :tracks
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

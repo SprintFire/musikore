@@ -19,5 +19,8 @@
 # Ignore IntelliJ folder
 /.idea/*
 
+# ignore music files
+public/system/tracks/*
+
 # Ignore application configuration
 /config/application.yml
